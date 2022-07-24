@@ -67,7 +67,7 @@ const main = () => {
   chocoEmoji = [...chocolateEmoji];
   number_of_line = $(".numberOfLine").val();
   line_length = $(".lineLength").val();
-  ipsume_category = 2;
+  ipsume_category = 1;
   number_of_paragraph = $(".numberOfParagraph").val();
   isEmoji = 1;
   $(".toggle-checkbox").attr("checked", "true");
