@@ -34,39 +34,24 @@
 
     <div class="">
 
-        <div id="main" class="h-screen overflow-y-scroll pb-2 w-full px-4 md:px-10 flex flex-col gap-4 ">
+        <div class="px-4 md:px-10 py-5 bg-white shadow-md font-bold text-xl`">Ipsume Generator</div>
+        <div class="mt-2 px-4 md:px-10 py-2 grid grid-cols-1 gap-2 md:gap-4 rounded-lg md:items-center">
 
-            <div class="py-2 grid grid-cols-1 gap-2 md:gap-4 bg-white rounded-lg md:items-center">
-
-                <div class="flex gap-4 bg-white rounded-lg items-center justify-between">
-                    <div class="px-2 py-4 flex gap-4 overflow-x-auto">
-                        <button onclick="setIpsumeCategory(this)" data-ipsume-category="1" class=" px-4 py-1 bg-slate-100 rounded-full border border-slate-900 activeCategory">Chocolate</button>
-                        <button onclick="setIpsumeCategory(this)" data-ipsume-category="2" class=" px-4 py-1 bg-slate-100 rounded-full">Sports</button>
-                        <button onclick="setIpsumeCategory(this)" data-ipsume-category="3" class=" px-4 py-1 bg-slate-100 rounded-full">Travel</button>
-                    </div>
-                    <button onclick="diceRandom()" class="diceRandom"></button>
+            <div
+                class="px-4 md:px-10 flex gap-4 bg-white rounded-lg items-center justify-between border border-slate-900">
+                <div class="px-2 pt-5 py-4 flex gap-4 overflow-x-auto">
+                    <button onclick="setIpsumeCategory(this)" data-ipsume-category="1"
+                        class=" px-4 py-1 bg-slate-100 rounded-full border border-slate-900 activeCategory">Chocolate</button>
+                    <button onclick="setIpsumeCategory(this)" data-ipsume-category="2"
+                        class=" px-4 py-1 bg-slate-100 rounded-full">Sports</button>
+                    <button onclick="setIpsumeCategory(this)" data-ipsume-category="3"
+                        class=" px-4 py-1 bg-slate-100 rounded-full">Travel</button>
                 </div>
+                <button onclick="diceRandom()" class="diceRandom"></button>
+            </div>
 
-                <div class="grid grid-cols-2 md:grid-cols-3 gap-4 md:items-center">
-                    <div class="flex flex-col mt-1 gap-2">
-                        <input min="1" max="20" step="1" onchange="setLineLength(this.value)"
-                            oninput="setLineLength(this.value)" type="range" class="range lineLength" value="5"></input>
-                        <label for="toggle" class="text-xs text-gray-700">Words per line</label>
-                    </div>
-                    <div class="flex flex-col mt-1 gap-2">
-                        <input min="1" max="20" step="1" onchange="setLineNumber(this.value)"
-                            oninput="setLineNumber(this.value)" type="range" class="range numberOfLine"
-                            value="5"></input>
-                        <label for="toggle" class="text-xs text-gray-700">number of line per paragraph</label>
-                    </div>
-                    <div class="flex flex-col mt-1 gap-2">
-                        <input min="1" max="10" step="1" onchange="setNumberOfParagraph(this.value)"
-                            oninput="setNumberOfParagraph(this.value)" type="range" class="numberOfParagraph"
-                            value="2"></input>
-                        <label for="toggle" class="text-xs text-gray-700">Number of Paragraph</label>
-                    </div>
-                </div>
-                
+            <div
+                class="px-4 py-4 md:px-10 flex gap-4 bg-white rounded-lg items-center justify-between border border-slate-900">
                 <div class="mt-2 flex gap-4">
                     <div class="relative inline-block w-10 mr-2 align-middle select-none">
                         <input onclick="isEntropyController()" type="checkbox" name="toggle" id="isEmoji"
@@ -82,8 +67,35 @@
                         <label for="toggle" class="emojiLable text-xs text-gray-700">Emojis Entropy</label>
                     </div>
                 </div>
-                
             </div>
+
+            <div
+                class="px-4 py-6 md:px-10 flex gap-4 bg-white rounded-lg items-center justify-between border border-slate-900">
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-4 md:items-center">
+                    <div class="flex flex-col mt-1 gap-2">
+                        <input min="1" max="20" step="1" onchange="setLineLength(this.value)"
+                            oninput="setLineLength(this.value)" type="range" class="range lineLength" value="5"></input>
+                        <label for="toggle" class="text-xs text-gray-700">Words per Line</label>
+                    </div>
+                    <div class="flex flex-col mt-1 gap-2">
+                        <input min="1" max="20" step="1" onchange="setLineNumber(this.value)"
+                            oninput="setLineNumber(this.value)" type="range" class="range numberOfLine"
+                            value="5"></input>
+                        <label for="toggle" class="text-xs text-gray-700">Number of Line</label>
+                    </div>
+                    <div class="flex flex-col mt-1 gap-2">
+                        <input min="1" max="10" step="1" onchange="setNumberOfParagraph(this.value)"
+                            oninput="setNumberOfParagraph(this.value)" type="range" class="numberOfParagraph"
+                            value="2"></input>
+                        <label for="toggle" class="text-xs text-gray-700">Number of Paragraph</label>
+                    </div>
+                </div>
+            </div>
+    
+
+        </div>
+        <div id="main" class="h-fit py-2 w-full px-4 md:px-10 flex flex-col gap-4 ">
+
 
             <div class="ipsumCanavas bg-white px-6 py-4 rounded-lg border border-slate-900"></div>
             <div class="quoteCanavas">
