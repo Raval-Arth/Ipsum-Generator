@@ -5,8 +5,10 @@ var emojis = "";
 var emoji_entropy = 50;
 var choco = [...chocolate];
 var sports = [...sport];
+var travels = [...travel];
 var chocoEmoji = [...chocolateEmoji];
 var sportsEmoji = [...sportEmoji];
+var travelsEmoji = [...travelEmoji];
 var number_of_line = 2;
 var line_length = 10;
 var ipsume_category = 1;
@@ -18,7 +20,9 @@ const random = () => {
   chocoEmoji.sort(() => 0.5 - Math.random());
   sports.sort(() => 0.5 - Math.random());
   sportsEmoji.sort(() => 0.5 - Math.random());
-  let dice = [1, 2, 3, 4, 5, 6];
+  travels.sort(() => 0.5 - Math.random());
+  travelsEmoji.sort(() => 0.5 - Math.random());
+
 };
 
 const diceRandom = () => {
@@ -42,6 +46,8 @@ const selectIpsumeWord = () => {
       return choco[Math.floor(Math.random() * choco.length)];
     case 2:
       return sports[Math.floor(Math.random() * sports.length)];
+    case 3:
+      return travels[Math.floor(Math.random() * travels.length)];
   }
 };
 
@@ -51,6 +57,8 @@ const selectIpsumeEmoji = () => {
       return chocoEmoji[Math.floor(Math.random() * chocoEmoji.length)];
     case 2:
       return sportsEmoji[Math.floor(Math.random() * sportsEmoji.length)];
+    case 3:
+      return travelsEmoji[Math.floor(Math.random() * travelsEmoji.length)];
   }
 };
 

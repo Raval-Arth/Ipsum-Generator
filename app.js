@@ -24,6 +24,11 @@ const setNumberOfParagraph = () => {
 };
 
 const setIpsumeCategory = (el) => {
+  console.log(el.parentNode.querySelector('.activeCategory') );
+  $(el).hasClass('activeCategory')?generateIpsume():(
+    $(el.parentNode.querySelector('.activeCategory')).removeClass('border border-slate-900 activeCategory'),
+    $(el).addClass('border border-slate-900 activeCategory')
+  );
   ipsume_category = $(el).data("ipsume-category");
   generateIpsume();
 };
