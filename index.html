@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- meta -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link class="profileico" rel="icon" type="" />
+    <title>Document</title>
+
+    <!-- css -->
+    <link rel="stylesheet" href="src/css/style.css" />
+
+    <!-- development -->
+    <script src="src/js/tailwind.min.js"></script>
+    <link rel="stylesheet" href="src/css/typography.min.css" />
+</head>
+
+<body class="bg-slate-50 text-slate-900">
+    <div class="mobileSidebarCanvas"></div>
+    <!-- nav -->
+    <div class="nav">
+        <img src="src/img/dice/1.svg" class='hidden' alt="">
+        <img src="src/img/dice/2.svg" class='hidden' alt="">
+        <img src="src/img/dice/3.svg" class='hidden' alt="">
+        <img src="src/img/dice/4.svg" class='hidden' alt="">
+        <img src="src/img/dice/5.svg" class='hidden' alt="">
+        <img src="src/img/dice/6.svg" class='hidden' alt="">
+
+    </div>
+
+    <!--  -->
+
+    <div class="">
+
+        <div id="main" class="h-[80vh] md:h-screen overflow-y-scroll pb-2 w-full px-10 flex flex-col gap-4 ">
+
+            <div class="py-2 grid grid-cols-1 gap-2 md:gap-4 bg-white rounded-lg md:items-center">
+
+                <div class="flex gap-4 bg-white rounded-lg items-center justify-between">
+                    <div class="flex gap-4 overflow-x-auto">
+                        <p onclick="setIpsumeCategory(this)" data-ipsume-category="1" class=" px-4 py-1 bg-slate-100 rounded-full">Chocolate</p>
+                        <p onclick="setIpsumeCategory(this)" data-ipsume-category="2" class=" px-4 py-1 bg-slate-100 rounded-full">Sports</p>
+                        <p onclick="setIpsumeCategory(this)" data-ipsume-category="3" class=" px-4 py-1 bg-slate-100 rounded-full">Travel</p>
+                    </div>
+                    <button onclick="diceRandom()" class="diceRandom"></button>
+                </div>
+
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-4 md:items-center">
+                    <div class="flex flex-col mt-1 gap-2">
+                        <input min="1" max="20" step="1" onchange="setLineLength(this.value)"
+                            oninput="setLineLength(this.value)" type="range" class="range lineLength" value="5"></input>
+                        <label for="toggle" class="text-xs text-gray-700">Words per line</label>
+                    </div>
+                    <div class="flex flex-col mt-1 gap-2">
+                        <input min="1" max="20" step="1" onchange="setLineNumber(this.value)"
+                            oninput="setLineNumber(this.value)" type="range" class="range numberOfLine"
+                            value="5"></input>
+                        <label for="toggle" class="text-xs text-gray-700">number of line per paragraph</label>
+                    </div>
+                    <div class="flex flex-col mt-1 gap-2">
+                        <input min="1" max="10" step="1" onchange="setNumberOfParagraph(this.value)"
+                            oninput="setNumberOfParagraph(this.value)" type="range" class="numberOfParagraph"
+                            value="2"></input>
+                        <label for="toggle" class="text-xs text-gray-700">Number of Paragraph</label>
+                    </div>
+                </div>
+                
+                <div class="mt-2 flex gap-4">
+                    <div class="relative inline-block w-10 mr-2 align-middle select-none">
+                        <input onclick="isEntropyController()" type="checkbox" name="toggle" id="isEmoji"
+                            class="toggle-checkbox absolute block w-6 h-6 rounded-full outline-none bg-white border-4 border-slate-300 appearance-none cursor-pointer" />
+                        <label for="toggle"
+                            class="toggle-label block overflow-hidden w-full h-6 rounded-full outline-none bg-slate-300 cursor-pointer">
+                        </label>
+                    </div>
+                    <div class="flex flex-col mt-1 gap-2">
+                        <input min="1" max="100" step="1" onchange="setEmojiEntropy(this.value)"
+                            oninput="setEmojiEntropy(this.value)" type="range" class="range emojiEntropy"
+                            value="50"></input>
+                        <label for="toggle" class="emojiLable text-xs text-gray-700">Emojis Entropy</label>
+                    </div>
+                </div>
+                
+            </div>
+
+            <div class="ipsumCanavas bg-white px-6 py-4 rounded-lg border border-slate-900"></div>
+            <div class="quoteCanavas">
+            </div>
+        </div>
+    </div>
+    <!-- footer -->
+    <div class="text-xl"></div>
+</body>
+
+<script src="src/js/jquery-3.6.0.min.js"></script>
+<script src="data/dictionary.js"></script>
+<script src="src/js/generate.js"></script>
+<!-- <script src="src/js/test.js"></script> -->
+<script src="app.js" defer></script>
+
+</html>
